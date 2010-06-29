@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<title>Scroller</title>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"> </script>
+		<script>
+			scrollerMarginTop = 0;
+			$(document).ready(function(){
+				setInterval('runScroller()', 25);
+			});
+			function runScroller(){
+				$('.scroller-inner').css('margin-top', scrollerMarginTop + 'px');
+				scrollerMarginTop -= 1;
+				if(scrollerMarginTop + $('.scroller-inner').height() < 0){
+					scrollerMarginTop = $('.scroller-outer').height();
+				}
+			}
+		</script>
+		<style>
+			.scroller-outer {
+				width: 200px;
+				height: 200px;
+				background-color: #ddd;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="scroller-outer">	
+			<div class="scroller-inner">
+				<p>
+					fsf ssdf gsdfg dfg sdhd fghdf ghdfg hdgfhdrtyerfg sty yu etye rtys ghdghsd gfrhd d rgh sdrhd gd fghjfgh dghs fgh sdfgsfg
+					fsf ssdf gsdfg dfg sdhd fghdf ghdfg hdgfhdrtyerfg sty yu etye rtys ghdghsd gfrhd d rgh sdrhd gd fghjfgh dghs fgh sdfgsfg
+					fsf ssdf gsdfg dfg sdhd fghdf ghdfg hdgfhdrtyerfg sty yu etye rtys ghdghsd gfrhd d rgh sdrhd gd fghjfgh dghs fgh sdfgsfg
+					fsf ssdf gsdfg dfg sdhd fghdf ghdfg hdgfhdrtyerfg sty yu etye rtys ghdghsd gfrhd d rgh sdrhd gd fghjfgh dghs fgh sdfgsfg
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
